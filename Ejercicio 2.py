@@ -11,3 +11,6 @@ num_peliculas = len(df_movies)
 print("El numero de peliculas totales es")
 print(num_peliculas)
 
+Distribucion_Calificaciones = df_movies['tomatometer_status'].value_counts()
+print(Distribucion_Calificaciones)
+
