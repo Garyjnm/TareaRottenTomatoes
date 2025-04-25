@@ -8,3 +8,17 @@
 
 import pandas as pd
 import matplotlib.pyplot as plt
+
+df_movies = pd.read_csv("./Data/Rotten Tomatoes Movies.csv")
+
+print("------------------Primeras 5 filas del dataframe--------------------------")
+print(df_movies.head(5))
+
+print("------------------Tipo de datos antes de la conversion--------------------------")
+print(df_movies.dtypes)
+
+print("------------------Tipo de datos despues de la conversion--------------------------")
+
+df_movies['in_theaters_date'] = pd.to_datetime(df_movies['in_theaters_date'], errors='coerce')
+
+print(df_movies.dtypes)
