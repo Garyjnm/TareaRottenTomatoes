@@ -15,3 +15,13 @@ print("-------------------------------------------")
 
 rat_audience = df_movies['audience_rating'].mean()
 print("promedio de audience es: " +str(rat_audience))
+
+df_movies['rating_diff'] = df_movies['audience_rating'] - df_movies['tomatometer_rating']
+
+plt.figure(figsize = (12,8))
+plt.hist(df_movies['rating_diff'], bins = 30, edgecolor = 'black', color = 'seagreen')
+plt.title("Distribucion, diferencia entre audiencia y criticos")
+plt.axvline(x=0, color='red', linestyle='--', linewidth=2)
+plt.xlabel("Diferencia (Audiencia - Criticos)")
+plt.ylabel("Numero de peliculas")
+plt.show()
