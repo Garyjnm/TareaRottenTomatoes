@@ -10,11 +10,11 @@ import matplotlib.pyplot as plt
 df_movies = pd.read_csv("./Data/Rotten Tomatoes Movies.csv")
 
 rat_tomatometer = df_movies['tomatometer_rating'].mean()
-print("promedio de tomatometer es: " +str(rat_tomatometer))
+print(f"Promedio de valoración por críticos: {rat_tomatometer:.2f}")
 print("-------------------------------------------")
 
 rat_audience = df_movies['audience_rating'].mean()
-print("promedio de audience es: " +str(rat_audience))
+print(f"Promedio de valoración por audiencia: {rat_audience:.2f}")
 
 df_movies['rating_diff'] = df_movies['audience_rating'] - df_movies['tomatometer_rating']
 
